@@ -29,6 +29,29 @@ export default function AuthPage({ setEmail, setToken }) {
     setToken(access_token); 
   }
   return (
-    <div>AuthPage</div>
+    <div className='auth-page'>
+      <form onSubmit={handleSignUp}>
+        <label>
+                Enter Email
+          <input required type='email' onChange={e => setFormEmail(e.target.value)}/>
+        </label>
+        <label>
+                Create password
+          <input required type='password' onChange={e => setFormPassword(e.target.value)}/>
+        </label>
+        <button>Sign Up</button>
+      </form>
+      <form onSubmit={handleSignIn}>
+        <label>
+                Enter Email
+          <input required type='email' onChange={e => setFormEmail(e.target.value)}/>
+        </label>
+        <label>
+                Enter Password
+          <input required type='password' onChange={e => setFormPassword(e.target.value)}/>
+        </label>
+        <button>Sign In</button>
+      </form>
+    </div>
   );
 }
