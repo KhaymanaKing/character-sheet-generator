@@ -70,6 +70,13 @@ function App() {
                   : <Redirect to='/'/>
               }
             </Route>
+            <Route exact path='/create-character'>
+              {
+                token
+                  ? <CreateCharacter/>
+                  : <Redirect to='/'/>
+              }
+            </Route>
           </Switch>
         </main>
       </div>
