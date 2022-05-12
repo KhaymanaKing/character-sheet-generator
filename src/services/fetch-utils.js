@@ -45,3 +45,6 @@ export async function getCharacterById(id) {
   return checkError(response);
 }
 
+export function getUser(){
+  return client.auth.session();
+}
