@@ -63,6 +63,13 @@ function App() {
                   : <Redirect to='/'/>
               }
             </Route>
+            <Route exact path='/characters/:id'>
+              {
+                token
+                  ? <CharacterDetails/>
+                  : <Redirect to='/'/>
+              }
+            </Route>
           </Switch>
         </main>
       </div>

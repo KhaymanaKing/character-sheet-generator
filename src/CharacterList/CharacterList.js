@@ -6,11 +6,11 @@ import Character from './Character';
 export default function CharacterList() {
   const [characters, setCharacters] = useState([]);
   useEffect(() => {
-    async function loadCharcters(){
+    async function loadCharacters(){
       const characterData = await getCharacters();
       setCharacters(characterData);
     }
-    loadCharcters();
+    loadCharacters();
   }, []);
 
   return (
