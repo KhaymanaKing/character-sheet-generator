@@ -7,7 +7,7 @@ import {
   Redirect,
   Link,
 } from 'react-router-dom';
-import AuthPage from './AuthPage/AuthPage';
+import AuthPage from './AuthPage';
 import CharacterDetails from './CharacterDetails/CharacterDetails';
 import CharacterList from './CharacterList/CharacterList';
 import CreateCharacter from './CreateCharacter/CreateCharacter';
@@ -34,10 +34,16 @@ function App() {
     <Router>
       <div className="App">
         <header className="App-header">
-          <h1> Currently Logged in as {email}</h1>
+          <h2> Currently Logged in as {email}</h2>
           <nav>
-            <Link to='/'>Characters</Link>
-            <Link to="/create-character">Create A Character</Link>
+            <ul>
+              <li>
+                <Link to='/'>Characters</Link>
+              </li>
+              <li>
+                <Link to="/create-character">Create A Character</Link>
+              </li>
+            </ul>
           </nav>
           <button onClick={handleLogout}>Log Out</button>
         </header>
@@ -48,6 +54,13 @@ function App() {
                 token
                   ? <Redirect to='/characters'/>
                   : <AuthPage setEmail={setEmail} setToken={setToken}/>
+              }
+            </Route>
+            <Route exact path='/characters'>
+              {
+                token
+                  ? <CharacterList/>
+                  : <Redirect to='/'/>
               }
             </Route>
           </Switch>
