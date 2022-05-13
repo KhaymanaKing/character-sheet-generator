@@ -1,21 +1,19 @@
 import { client, checkError } from './client';
 
 export async function signUp(email, password) {
-  const { user, error } = await client.auth.signUp({
+  const response = await client.auth.signUp({
     email,
     password
   });
-  if (error) return error;
-  return user;
+  return response.user;
 }
 
 export async function signIn(email, password) {
-  const { user, error } = await client.auth.signIn({
+  const response = await client.auth.signIn({
     email,
     password
   });
-  if (error) return error;
-  return user;
+  return response.user;
 }
 export async function logout(){
   await client.auth.signOut();
@@ -40,6 +38,7 @@ export async function getCharacters() {
 export async function getCharacterById(id) {
   const response = await client
     .from ('character_gen')
+    .select()
     .match ({ id })
     .single();
   return checkError(response);

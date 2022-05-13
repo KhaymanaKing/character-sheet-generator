@@ -34,49 +34,49 @@ export default function CreateCharacter() {
         </label>
         <label>
                 Level
-          <input required onChange={e => setCharacterForm ({
+          <input type='number'required onChange={e => setCharacterForm ({
             ...characterForm,
             level: e.target.value
           })}/>
         </label>
         <label>
                 Strength
-          <input required onChange={e => setCharacterForm ({
+          <input type='number'required onChange={e => setCharacterForm ({
             ...characterForm,
             str: e.target.value
           })}/>
         </label>
         <label>
                 Dexterity
-          <input required onChange={e => setCharacterForm ({
+          <input type='number'required onChange={e => setCharacterForm ({
             ...characterForm,
             dex: e.target.value
           })}/>
         </label>
         <label>
                 Constitution
-          <input required onChange={e => setCharacterForm ({
+          <input type='number'required onChange={e => setCharacterForm ({
             ...characterForm,
             con: e.target.value
           })}/>
         </label>
         <label>
                 Intelligence
-          <input required onChange={e => setCharacterForm ({
+          <input type='number'required onChange={e => setCharacterForm ({
             ...characterForm,
             int: e.target.value
           })}/>
         </label>
         <label>
                 Wisdom
-          <input required onChange={e => setCharacterForm ({
+          <input type='number'required onChange={e => setCharacterForm ({
             ...characterForm,
             wis: e.target.value
           })}/>
         </label>
         <label>
                 Charisma
-          <input required onChange={e => setCharacterForm ({
+          <input type='number'required onChange={e => setCharacterForm ({
             ...characterForm,
             cha: e.target.value
           })}/>

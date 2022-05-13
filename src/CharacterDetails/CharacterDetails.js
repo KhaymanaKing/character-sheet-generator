@@ -5,7 +5,7 @@ import { getCharacterById } from '../services/fetch-utils';
 
 export default function CharacterDetails() {
   const [character, setCharacter] = useState({});
-  const { id } = useParams;
+  const { id } = useParams();
 
   useEffect(() => {
     async function load(){
