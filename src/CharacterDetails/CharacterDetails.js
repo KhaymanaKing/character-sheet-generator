@@ -26,7 +26,7 @@ export default function CharacterDetails() {
   }, [id]);
   async function handleSubmit(e){
     e.preventDefault();
-    await editCharacter(id);
+    await editCharacter(id, characterForm);
     history.push('/characters');
   }
   return (
