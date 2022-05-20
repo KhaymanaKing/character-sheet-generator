@@ -7,13 +7,13 @@ export default function CreateCharacter() {
   const history = useHistory();
   const [characterForm, setCharacterForm] = useState ({
     name:'',
-    level:1,
-    str:10,
-    dex:10,
-    con:10,
-    int:10,
-    wis:10,
-    cha:10,
+    level: 1,
+    str: 10,
+    dex: 10,
+    con: 10,
+    int: 10,
+    wis: 10,
+    cha: 10,
   });
   async function handleSubmit(e){
     e.preventDefault();
@@ -34,49 +34,49 @@ export default function CreateCharacter() {
         </label>
         <label>
                 Level
-          <input type='number'required onChange={e => setCharacterForm ({
+          <input value={characterForm.level} type='number'required onChange={e => setCharacterForm ({
             ...characterForm,
             level: e.target.value
           })}/>
         </label>
         <label>
                 Strength
-          <input type='number'required onChange={e => setCharacterForm ({
+          <input value={characterForm.str} type='number'required onChange={e => setCharacterForm ({
             ...characterForm,
             str: e.target.value
           })}/>
         </label>
         <label>
                 Dexterity
-          <input type='number'required onChange={e => setCharacterForm ({
+          <input value={characterForm.dex} type='number'required onChange={e => setCharacterForm ({
             ...characterForm,
             dex: e.target.value
           })}/>
         </label>
         <label>
                 Constitution
-          <input type='number'required onChange={e => setCharacterForm ({
+          <input value={characterForm.con}type='number'required onChange={e => setCharacterForm ({
             ...characterForm,
             con: e.target.value
           })}/>
         </label>
         <label>
                 Intelligence
-          <input type='number'required onChange={e => setCharacterForm ({
+          <input value={characterForm.int} type='number'required onChange={e => setCharacterForm ({
             ...characterForm,
             int: e.target.value
           })}/>
         </label>
         <label>
                 Wisdom
-          <input type='number'required onChange={e => setCharacterForm ({
+          <input value={characterForm.wis} type='number'required onChange={e => setCharacterForm ({
             ...characterForm,
             wis: e.target.value
           })}/>
         </label>
         <label>
                 Charisma
-          <input type='number'required onChange={e => setCharacterForm ({
+          <input value={characterForm.cha} type='number'required onChange={e => setCharacterForm ({
             ...characterForm,
             cha: e.target.value
           })}/>
