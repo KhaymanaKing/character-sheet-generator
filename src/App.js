@@ -34,8 +34,7 @@ function App() {
     <Router>
       <div className="App">
         <header className="App-header">
-          <h2> Currently Logged in as {email}</h2>
-          <nav>
+          { email ? <><h2> Currently Logged in as {email}</h2><nav>
             <ul>
               <li>
                 <Link to='/'>Characters</Link>
@@ -44,8 +43,9 @@ function App() {
                 <Link to="/create-character">Create A Character</Link>
               </li>
             </ul>
-          </nav>
-          <button onClick={handleLogout}>Log Out</button>
+          </nav><button onClick={handleLogout}>Log Out</button></>
+            : <h2>Please Login</h2>
+          }
         </header>
         <main>
           <Switch>

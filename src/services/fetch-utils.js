@@ -44,6 +44,13 @@ export async function getCharacterById(id) {
   return checkError(response);
 }
 
+export async function editCharacter(id, character) {
+  const { body, error } = await client
+    .from ('character_gen')
+    .update (character)
+    .match ({ id });
+  return error || body;
+}
 export function getUser(){
   return client.auth.session();
 }
